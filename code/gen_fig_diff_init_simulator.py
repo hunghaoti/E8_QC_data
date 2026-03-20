@@ -48,17 +48,17 @@ ax.text(
 
 ax.plot(
     ts, exact_ms_D4,
-    'o-', markersize=2.5,
+    'o-', markersize=2.3,
     label=r'$|\uparrow\uparrow\downarrow\downarrow\downarrow\downarrow\uparrow\uparrow\rangle$'
 )
 ax.plot(
     ts, exact_ms_D2,
-    's-', markersize=2.3,
+    's-', markersize=1.8,
     label=r'$|\uparrow\uparrow\uparrow\downarrow\downarrow\uparrow\uparrow\uparrow\rangle$'
 )
 ax.plot(
     ts, exact_ms_D0,
-    '^-', markersize=2.3,
+    '^-', markersize=1.8,
     label=r'$|\uparrow\uparrow\uparrow\uparrow\uparrow\uparrow\uparrow\uparrow\rangle$'
 )
 
