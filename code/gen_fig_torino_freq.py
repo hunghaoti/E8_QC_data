@@ -53,26 +53,32 @@ axs[0].text(-0.15, 1.1, '(a)', transform=axs[0].transAxes, fontsize=14, vertical
 axs[0].semilogy(f_exact[1:int(len(f_exact)/2)], abs(mf_exact[1:int(len(mf_exact)/2)]), marker = 'o', color = 'k', label = 'exact')
 axs[0].semilogy(f_trotter[1:int(len(f_trotter)/2)], abs(mf_trotter[1:int(len(mf_trotter)/2)]), marker = 's', label = 'ibm_torino trotter', linestyle='none')
 axs[0].semilogy(f_com[1:int(len(f_com)/2)], abs(mf_com[1:int(len(mf_com)/2)]), marker = '^', label = 'ibm_torino compressed', linestyle='none')
+idx = [5]
+axs[0].scatter(f_exact[idx], abs(mf_exact[idx]), marker = 'o', facecolors='none', edgecolors='k', s = 150, zorder = 0)
+idx = [6]
+axs[0].scatter(f_trotter[idx], abs(mf_trotter[idx]), marker = 'o', facecolors='none', edgecolors='tab:blue', s = 150, zorder = 0)
+idx = [5]
+axs[0].scatter(f_com[idx], abs(mf_com[idx]), marker = 'o', facecolors='none', edgecolors='tab:orange', s = 150, zorder = 0)
 m1 = 1.
 m2 = 1.6180339887 * m1
 m3 = 1.9890437907 * m1
 m4 = 2.4048671724 * m1
-axs[0].axhline(y=70, linestyle = '--', linewidth = 1, color = 'gray')
+axs[0].axhline(y=25, linestyle = '--', linewidth = 1, color = 'gray')
 axs[0].axvline(x=(m2-m1), ymax = 0.9, linestyle = '--', linewidth = 1, color = 'gray')
-axs[0].axvline(x=m1, ymax = 0.9, linestyle = '--', linewidth = 1, color = 'gray')
-axs[0].axvline(x=m2, ymax = 0.9, linestyle = '--', linewidth = 1, color = 'gray')
-axs[0].axvline(x=m3, ymax = 0.9, linestyle = '--', linewidth = 1, color = 'gray')
+axs[0].axvline(x=m1, ymax = 0.8, linestyle = '--', linewidth = 1, color = 'gray')
+axs[0].axvline(x=m2, ymax = 0.8, linestyle = '--', linewidth = 1, color = 'gray')
+axs[0].axvline(x=m3, ymax = 0.8, linestyle = '--', linewidth = 1, color = 'gray')
 axs[0].axvline(x=m1+m2, ymax = 0.9, linestyle = '--', linewidth = 1, color = 'gray')
 axs[0].set_title(r'initial state = $\left| \uparrow \uparrow \downarrow \downarrow \downarrow \downarrow \uparrow \uparrow \right\rangle$')
-axs[0].set_xlabel('$\omega$')
+axs[0].set_xlabel('$\omega / 2\pi$')
 axs[0].set_ylabel(r'$\langle \sigma^z_\mathrm{cen}\rangle$')
 axs[0].set_ylim([0.008, 200])
 axs[0].arrow( m2-m1 - 0.12, 40, 0, -15, linewidth = 2, head_width=0.1, head_length=4, fc='r',  ec='r', zorder = 10)
-axs[0].text( m2-m1 - 0.5, 100, "$m_{2-1}$", fontsize=10, color='k')
-axs[0].text( m1 - 0.1, 100, "$m_{1}$", fontsize=10, color='k')
-axs[0].text( m2 - 0.2, 100, "$m_{2}$", fontsize=10, color='k')
-axs[0].text( m3 - 0.1, 100, "$m_{3}$", fontsize=10, color='k')
-axs[0].text( m1+m2 - 0.3, 100, "$m_{1+2}$", fontsize=10, color='k')
+axs[0].text( m2-m1 - 0.5, 100, "$m_2-m_1$", fontsize=10, color='k')
+axs[0].text( m1 - 0.1, 40, "$m_{1}$", fontsize=10, color='k')
+axs[0].text( m2 - 0.2, 40, "$m_{2}$", fontsize=10, color='k')
+axs[0].text( m3 - 0.1, 40, "$m_{3}$", fontsize=10, color='k')
+axs[0].text( m1+m2 - 0.3, 100, "$m_1+m_2}$", fontsize=10, color='k')
 
 
 
@@ -105,28 +111,34 @@ axs[1].text(-0.08, 1.1, '(b)', transform=axs[1].transAxes, fontsize=14, vertical
 axs[1].semilogy(f_exact[1:int(len(f_exact)/2)], abs(mf_exact[1:int(len(mf_exact)/2)]), marker = 'o', color = 'k', label = 'exact')
 axs[1].semilogy(f_trotter[1:int(len(f_trotter)/2)], abs(mf_trotter[1:int(len(mf_trotter)/2)]), marker = 's', label = 'ibm_torino trotter', linestyle='none')
 axs[1].semilogy(f_com[1:int(len(f_com)/2)], abs(mf_com[1:int(len(mf_com)/2)]), marker = '^', label = 'ibm_torino compressed', linestyle='none')
+idx = [10]
+axs[1].scatter(f_exact[idx], abs(mf_exact[idx]), marker = 'o', facecolors='none', edgecolors='k', s = 150, zorder = 0)
+idx = [11]
+axs[1].scatter(f_trotter[idx], abs(mf_trotter[idx]), marker = 'o', facecolors='none', edgecolors='tab:blue', s = 150, zorder = 0)
+idx = [10]
+axs[1].scatter(f_com[idx], abs(mf_com[idx]), marker = 'o', facecolors='none', edgecolors='tab:orange', s = 150, zorder = 0)
 m1 = 1.
 m2 = 1.6180339887 * m1
 m3 = 1.9890437907 * m1
 m4 = 2.4048671724 * m1
-axs[1].axhline(y=70, linestyle = '--', linewidth = 1, color = 'gray')
+axs[1].axhline(y=25, linestyle = '--', linewidth = 1, color = 'gray')
 axs[1].axvline(x=(m2-m1), ymax = 0.9, linestyle = '--', linewidth = 1, color = 'gray')
-axs[1].axvline(x=m1, ymax = 0.9, linestyle = '--', linewidth = 1, color = 'gray')
-axs[1].axvline(x=m2, ymax = 0.9, linestyle = '--', linewidth = 1, color = 'gray')
-axs[1].axvline(x=m3, ymax = 0.9, linestyle = '--', linewidth = 1, color = 'gray')
+axs[1].axvline(x=m1, ymax = 0.8, linestyle = '--', linewidth = 1, color = 'gray')
+axs[1].axvline(x=m2, ymax = 0.8, linestyle = '--', linewidth = 1, color = 'gray')
+axs[1].axvline(x=m3, ymax = 0.8, linestyle = '--', linewidth = 1, color = 'gray')
 axs[1].axvline(x=m1+m2, ymax = 0.9, linestyle = '--', linewidth = 1, color = 'gray')
 #axs[1].legend(loc = 'best')
 axs[1].set_title(r'initial state = $\left| \uparrow \uparrow \uparrow \downarrow \downarrow \uparrow \uparrow \uparrow \right\rangle$')
-axs[1].set_xlabel('$\omega$')
+axs[1].set_xlabel('$\omega / 2\pi$')
 axs[1].set_ylim([0.008, 200])
 axs[1].arrow( m2-m1-0.12, 10, 0, -4, linewidth = 2, head_width=0.1, head_length=1.2, fc='r',  ec='r', zorder = 10)
 axs[1].arrow( m1, 13, 0, -5, linewidth = 2, head_width=0.1, head_length=1.5, fc='r',  ec='r', zorder = 10)
 axs[1].arrow( m2, 5, 0, -2, linewidth = 2, head_width=0.1, head_length=0.5, fc='r',  ec='r', zorder = 10)
-axs[1].text( m2-m1 - 0.5, 100, "$m_{2-1}$", fontsize=10, color='k')
-axs[1].text( m1 - 0.1, 100, "$m_{1}$", fontsize=10, color='k')
-axs[1].text( m2 - 0.2, 100, "$m_{2}$", fontsize=10, color='k')
-axs[1].text( m3 - 0.1, 100, "$m_{3}$", fontsize=10, color='k')
-axs[1].text( m1+m2 - 0.3, 100, "$m_{1+2}$", fontsize=10, color='k')
+axs[1].text( m2-m1 - 0.5, 100, "$m_2-m_1$", fontsize=10, color='k')
+axs[1].text( m1 - 0.1, 40, "$m_{1}$", fontsize=10, color='k')
+axs[1].text( m2 - 0.2, 40, "$m_{2}$", fontsize=10, color='k')
+axs[1].text( m3 - 0.1, 40, "$m_{3}$", fontsize=10, color='k')
+axs[1].text( m1+m2 - 0.3, 100, "$m_1+m_2}$", fontsize=10, color='k')
 axs[1].set_yticks([])
 
 #plot trotter torino, compress torino, D0
@@ -170,29 +182,35 @@ axs[2].text(-0.08, 1.1, '(c)', transform=axs[2].transAxes, fontsize=14, vertical
 axs[2].semilogy(f_exact[1:int(len(f_exact)/2)], abs(mf_exact[1:int(len(mf_exact)/2)]), marker = 'o', color = 'k', label = 'exact')
 axs[2].semilogy(f_trotter[1:int(len(f_trotter)/2)], abs(mf_trotter[1:int(len(mf_trotter)/2)]), marker = 's', label = '$1^{\mathrm{st}}$ Trotter', linestyle='none')
 axs[2].semilogy(f_com[1:int(len(f_com)/2)], abs(mf_com[1:int(len(mf_com)/2)]), marker = '^', label = 'Riemannian opt', linestyle='none')
+idx = [16,26]
+axs[2].scatter(f_exact[idx], abs(mf_exact[idx]), marker = 'o', facecolors='none', edgecolors='k', s = 150, zorder = 0)
+idx = [17,25]
+axs[2].scatter(f_trotter[idx], abs(mf_trotter[idx]), marker = 'o', facecolors='none', edgecolors='tab:blue', s = 150, zorder = 0)
+idx = [16,26]
+axs[2].scatter(f_com[idx], abs(mf_com[idx]), marker = 'o', facecolors='none', edgecolors='tab:orange', s = 150, zorder = 2)
 
 m1 = 1.
 m2 = 1.6180339887 * m1
 m3 = 1.9890437907 * m1
 m4 = 2.4048671724 * m1
-axs[2].axhline(y=70, linestyle = '--', linewidth = 1, color = 'gray')
+axs[2].axhline(y=25, linestyle = '--', linewidth = 1, color = 'gray')
 axs[2].axvline(x=(m2-m1), ymax = 0.9, linestyle = '--', linewidth = 1, color = 'gray')
-axs[2].axvline(x=m1, ymax = 0.9, linestyle = '--', linewidth = 1, color = 'gray')
-axs[2].axvline(x=m2, ymax = 0.9, linestyle = '--', linewidth = 1, color = 'gray')
-axs[2].axvline(x=m3, ymax = 0.9, linestyle = '--', linewidth = 1, color = 'gray')
+axs[2].axvline(x=m1, ymax = 0.8, linestyle = '--', linewidth = 1, color = 'gray')
+axs[2].axvline(x=m2, ymax = 0.8, linestyle = '--', linewidth = 1, color = 'gray')
+axs[2].axvline(x=m3, ymax = 0.8, linestyle = '--', linewidth = 1, color = 'gray')
 axs[2].axvline(x=m1+m2, ymax = 0.9, linestyle = '--', linewidth = 1, color = 'gray')
 axs[2].legend(loc='upper right', bbox_to_anchor=(1.24, 1.01))
-axs[2].set_xlabel('$\omega$')
+axs[2].set_xlabel('$\omega / 2\pi$')
 axs[2].set_ylim([0.008, 200])
 axs[2].set_title(r'initial state = $\left| \uparrow \uparrow \uparrow \uparrow \uparrow \uparrow \uparrow \uparrow \right\rangle$')
 axs[2].arrow( m1, 5, 0, -2, linewidth = 2, head_width=0.1, head_length=0.6, fc='r',  ec='r', zorder = 10)
 axs[2].arrow( m2, 8, 0, -3.5, linewidth = 2, head_width=0.1, head_length=0.8, fc='r',  ec='r', zorder = 10)
 axs[2].arrow( m1+m2, 2.2, 0, -1, linewidth = 2, head_width=0.1, head_length=0.2, fc='r',  ec='r', zorder = 10)
-axs[2].text( m2-m1 - 0.5, 100, "$m_{2-1}$", fontsize=10, color='k')
-axs[2].text( m1 - 0.1, 100, "$m_{1}$", fontsize=10, color='k')
-axs[2].text( m2 - 0.2, 100, "$m_{2}$", fontsize=10, color='k')
-axs[2].text( m3 - 0.1, 100, "$m_{3}$", fontsize=10, color='k')
-axs[2].text( m1+m2 - 0.3, 100, "$m_{1+2}$", fontsize=10, color='k')
+axs[2].text( m2-m1 - 0.5, 100, "$m_2-m_1$", fontsize=10, color='k')
+axs[2].text( m1 - 0.1, 40, "$m_{1}$", fontsize=10, color='k')
+axs[2].text( m2 - 0.2, 40, "$m_{2}$", fontsize=10, color='k')
+axs[2].text( m3 - 0.1, 40, "$m_{3}$", fontsize=10, color='k')
+axs[2].text( m1+m2 - 0.3, 100, "$m_1+m_2}$", fontsize=10, color='k')
 axs[2].set_yticks([])
 plt.tight_layout()
 plt.subplots_adjust(wspace=0.1)  # Increase horizontal spacing

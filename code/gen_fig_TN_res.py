@@ -46,7 +46,7 @@ ts = np.arange(0, dt*cnt, dt)
 cnt_trotter = len(ms_trotter)
 ts = np.arange(0, dt*cnt_trotter, dt)
 
-fig, axs = plt.subplots(1, 2, figsize=(12.4, 4.8))  # 1 row, 2 columns
+fig, axs = plt.subplots(1, 2, figsize=(11, 4))  # 1 row, 2 columns
 
 axs[0].plot(ts, ms_trotter, label=r'$1^{\mathrm{st}}$ Trotter decomposition')
 cnt_tdvp = len(ms_tdvp)
@@ -67,7 +67,7 @@ axs[0].set_ylim([-1.05, 0])
 #axs[0].set_title(title)
 axs[0].legend(loc = 'upper left')
 axs[0].set_xlabel('$t$')
-axs[0].set_ylabel(r'$\langle \sigma^z_{\mathrm{cen}}(t) \rangle$')
+axs[0].set_ylabel(r'$\langle \sigma^z_{\mathrm{cen}} \rangle$')
 
 # Plot on second subplot
 
@@ -105,8 +105,8 @@ axs[1].set_xlim([0,5])
 #ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 axs[1].legend(loc='upper right')
 #plt.title(title)
-axs[1].set_xlabel('$\omega$')
-axs[1].set_ylabel(r'$\langle \sigma^z_{\mathrm{cen}}(\omega) \rangle$')
+axs[1].set_xlabel('$\omega / 2\pi$')
+axs[1].set_ylabel(r'$\langle \sigma^z_{\mathrm{cen}} \rangle$')
 
 
 # Adjust layout

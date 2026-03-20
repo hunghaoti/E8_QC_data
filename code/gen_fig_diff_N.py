@@ -27,7 +27,7 @@ for init_state in init_states:
     else:
         plt.semilogy(f[1:int(len(f)/2)], abs(mf[1:int(len(mf)/2)]), label = r'$L='+str(N) +'$')
     #plt.title('L='+str(N)+',Initial state = ' + init_state)
-    plt.xlabel('$\omega$')
+    plt.xlabel('$\omega / 2\pi$')
     plt.ylabel(r'$\langle \sigma^z_\mathrm{cen}\rangle$')
 plt.legend(loc = 'upper right')
 plt.savefig(fig_path + 'diff_sites.pdf')

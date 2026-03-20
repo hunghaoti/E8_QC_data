@@ -37,7 +37,7 @@ cnt = len(ms_exact)
 ts = np.arange(0, dt*cnt, dt)
 #time
 
-fig, axs = plt.subplots(1, 2, figsize=(12.4, 4.8))  # 1 row, 2 columns
+fig, axs = plt.subplots(1, 2, figsize=(11, 4))  # 1 row, 2 columns
 
 cnt_exact = len(ms_exact)
 ts = np.arange(0, dt*cnt_exact, dt)
@@ -51,7 +51,7 @@ title = '$J=' + '{:g}'.format(J) + ', h_x=' + '{:g}'.format(hx) + ', h_z=' + '{:
         ', L='+str(N) +'$, '+ '\ninit=' + init_state
 #axs[0].set_title(title)
 axs[0].set_xlabel('$t$')
-axs[0].set_ylabel(r'$\langle \sigma^z_{\mathrm{cen}}(t) \rangle$')
+axs[0].set_ylabel(r'$\langle \sigma^z_{\mathrm{cen}}\rangle$')
 
 # Plot on second subplot
 
@@ -80,6 +80,7 @@ axs[1].axvline(x = m7,color = cycle[1],linestyle = '-.',  label = '$m_7$', alpha
 axs[1].axvline(x = m8,color = cycle[2],linestyle = '-.',  label = '$m_8$', alpha = alpha)
 
 axs[1].set_xlim([0,5])
+axs[1].set_ylim([0,100])
 
 axs[1].text(0.56-0.12, 40, '0.56', fontsize=10)
 axs[1].text(0.96-0.02, 3, '0.96', fontsize=10)
@@ -92,8 +93,8 @@ axs[1].text(2.55-0.12, 0.2, '2.55', fontsize=10)
 axs[1].legend(loc='center left', bbox_to_anchor=(1, 0.5))
 #axs[1].legend(loc='upper right')
 #plt.title(title)
-axs[1].set_xlabel('$\omega$')
-axs[1].set_ylabel(r'$\langle \sigma^z_{\mathrm{cen}}(\omega) \rangle$')
+axs[1].set_xlabel('$\omega / 2\pi$')
+axs[1].set_ylabel(r'$\langle \sigma^z_{\mathrm{cen}}\rangle$')
 
 
 # Adjust layout
